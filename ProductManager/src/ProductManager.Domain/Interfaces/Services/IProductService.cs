@@ -1,10 +1,10 @@
 ﻿using ProductManager.Domain.Models.Entities;
 
-namespace ProductManager.Domain.Interfaces;
+namespace ProductManager.Domain.Interfaces.Services;
 
 public interface IProductService
 {
-    Task Create(Product product);
+    Task Add(Product product);
     Task Update(Product product);
-    Task Delete(Guid id);
+    Task Remove(Guid id);
 }

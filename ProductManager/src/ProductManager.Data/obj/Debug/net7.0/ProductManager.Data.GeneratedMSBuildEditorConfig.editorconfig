@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProductManager.Data
-build_property.ProjectDir = C:\Users\Mathe\Documents\GitHub\ProductManagerV1\ProductManager\src\ProductManager.Data\
+build_property.ProjectDir = C:\Users\t-matheus.berto\Documents\GitHub\ProductManagerV1\ProductManager\src\ProductManager.Data\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

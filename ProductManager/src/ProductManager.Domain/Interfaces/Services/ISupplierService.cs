@@ -1,10 +1,11 @@
 ﻿using ProductManager.Domain.Models.Entities;
 
-namespace ProductManager.Domain.Interfaces;
+namespace ProductManager.Domain.Interfaces.Services;
 
 public interface ISupplierService :IDisposable
 {
-    Task Create(Supplier supplier);
+    Task Add(Supplier supplier);
     Task Update(Supplier supplier);
-    Task Delete(Guid id);
+    Task Remove(Guid id);
+    Task Dispose();
 }
