@@ -1,0 +1,5 @@
+C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.csproj.AssemblyReference.cache
+C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.AssemblyInfoInputs.cache
+C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.AssemblyInfo.cs
+C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.csproj.CoreCompileInputs.cache
