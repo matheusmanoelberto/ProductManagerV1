@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fFVnS8hdAz0l6drx/Aghf8g9+0ByI38iKdJnZTig0NCl3DDJAREbCei/41NaB9buTTUM/67ge05s7dZXMxgtlA==",
+  "dgSpecHash": "8dzUe0tj2MgfKmF4wq3OZA+9kPxMMm/kLka/UyY9WhRyA/p3nl1NlAbAwk2+fO14Ei8bQF7e87AohZ8ZVxvOVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\t-matheus.berto\\Documents\\GitHub\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\ProductManager.Data.csproj",
+  "projectFilePath": "C:\\Users\\Mathe\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\ProductManager.Data.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -9,3 +9,15 @@ C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager
 C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\refint\ProductManager.Data.dll
 C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.pdb
 C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ref\ProductManager.Data.dll
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\bin\Debug\net7.0\ProductManager.Data.deps.json
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\bin\Debug\net7.0\ProductManager.Data.dll
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\bin\Debug\net7.0\ProductManager.Data.pdb
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.AssemblyInfoInputs.cache
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.AssemblyInfo.cs
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.csproj.CoreCompileInputs.cache
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.sourcelink.json
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.dll
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\refint\ProductManager.Data.dll
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ProductManager.Data.pdb
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Data\obj\Debug\net7.0\ref\ProductManager.Data.dll

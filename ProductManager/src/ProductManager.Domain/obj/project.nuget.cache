@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fhvMfyADEIDOO1J+8wPIYiaLKQKaJqrM1b+MjEmkMiZRES8n2/OPPjeVt0V7CWV8QvCNjHsyDyp4q67seEmi9Q==",
+  "dgSpecHash": "mBzJCMjHe8i1jGgr9A+SSbYygrImYN6kn9PibkyK3UVuBnzOkf/SEpH88E7pgAhvOyDix/kbt1oDZksADbEl5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\t-matheus.berto\\Documents\\GitHub\\ProductManagerV1\\ProductManager\\src\\ProductManager.Domain\\ProductManager.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Mathe\\ProductManagerV1\\ProductManager\\src\\ProductManager.Domain\\ProductManager.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\t-matheus.berto\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512"
+    "C:\\Users\\Mathe\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512"
   ],
   "logs": []
 }

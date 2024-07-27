@@ -7,7 +7,7 @@ public class ProductValidation : AbstractValidator<Product>
 {
     public ProductValidation()
     {
-        RuleFor( => p.Name)
+        RuleFor( p => p.Name)
             .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
             .Length(2,200).WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
         

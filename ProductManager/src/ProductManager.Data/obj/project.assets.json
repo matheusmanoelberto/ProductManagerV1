@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\t-matheus.berto\\.nuget\\packages\\": {}
+    "C:\\Users\\Mathe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\t-matheus.berto\\Documents\\GitHub\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\ProductManager.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Mathe\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\ProductManager.Data.csproj",
       "projectName": "ProductManager.Data",
-      "projectPath": "C:\\Users\\t-matheus.berto\\Documents\\GitHub\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\ProductManager.Data.csproj",
-      "packagesPath": "C:\\Users\\t-matheus.berto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\t-matheus.berto\\Documents\\GitHub\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\obj\\",
+      "projectPath": "C:\\Users\\Mathe\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\ProductManager.Data.csproj",
+      "packagesPath": "C:\\Users\\Mathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mathe\\ProductManagerV1\\ProductManager\\src\\ProductManager.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\t-matheus.berto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -66,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
