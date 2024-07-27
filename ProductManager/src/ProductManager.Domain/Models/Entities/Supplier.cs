@@ -9,4 +9,5 @@ public class Supplier : Entity
     public TypeSupplier TypeSupplier { get; set; }
     public bool Active { get; set; }
     public Address? Address { get; set; }
+    public IEnumerable<Product> Products { get; set; }
 }

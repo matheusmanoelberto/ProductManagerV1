@@ -1,3 +1,4 @@
+using ProductManager.Domain.Interfaces;
 using ProductManager.Domain.Interfaces.Respositories;
 using ProductManager.Domain.Interfaces.Services;
 using ProductManager.Domain.Models.Entities;
@@ -9,7 +10,8 @@ public class ProductService : BaseService, IProductService
 {
     private readonly IProductRepository _productRepository;
 
-    public ProductService(IProductRepository productRepository)
+    public ProductService(IProductRepository productRepository,
+                          INotifier notifier) : base(notifier)
     {
         _productRepository = productRepository;
     }

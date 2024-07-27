@@ -6,5 +6,6 @@ public interface ISupplierRepository :IRepository<Supplier>
 {
     Task<Supplier> GetSupplierAddress(Guid id);
     Task<Supplier> GetSupplierProductsAddress(Guid id);
-    Task<Supplier> GetAddressbySupplier(Guid id);
+    Task<Address> GetAddressbySupplier(Guid supplierId);
+    Task RemoveAddressSupplier(Address address);
 }
