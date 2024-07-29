@@ -3,9 +3,16 @@ C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager
 C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.AssemblyInfoInputs.cache
 C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.AssemblyInfo.cs
 C:\Users\Mathe\Documents\GitHub\ProductManager\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\bin\Debug\net7.0\ProductManager.Domain.deps.json
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\bin\Debug\net7.0\ProductManager.Domain.dll
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\bin\Debug\net7.0\ProductManager.Domain.pdb
 C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.csproj.AssemblyReference.cache
 C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.AssemblyInfoInputs.cache
 C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.AssemblyInfo.cs
 C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.sourcelink.json
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.dll
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\refint\ProductManager.Domain.dll
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ProductManager.Domain.pdb
+C:\Users\Mathe\ProductManagerV1\ProductManager\src\ProductManager.Domain\obj\Debug\net7.0\ref\ProductManager.Domain.dll
