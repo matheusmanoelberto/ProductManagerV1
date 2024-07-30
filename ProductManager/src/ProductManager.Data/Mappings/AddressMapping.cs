@@ -30,7 +30,7 @@ public class AddressMapping : IEntityTypeConfiguration<Address>
             .IsRequired()
             .HasColumnType("varchar(100)");
 
-        builder.Property(c => c.Cyte)
+        builder.Property(c => c.City)
             .IsRequired()
             .HasColumnType("varchar(100)");
 

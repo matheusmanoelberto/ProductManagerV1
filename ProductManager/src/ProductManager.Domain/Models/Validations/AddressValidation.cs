@@ -19,7 +19,7 @@ public class AddressValidation : AbstractValidator<Address>
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
                 .Length(8).WithMessage("O campo {PropertyName} precisa ter {MaxLength} caracteres");
 
-        RuleFor(a => a.Cyte)
+        RuleFor(a => a.City)
             .NotEmpty().WithMessage("A campo {PropertyName} precisa ser fornecida")
             .Length(2, 100).WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
 

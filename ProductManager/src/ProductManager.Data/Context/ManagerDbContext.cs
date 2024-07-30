@@ -29,7 +29,7 @@ public class ManagerDbContext : DbContext
         {
             if (entry.State == EntityState.Added)
             {
-                entry.Property("DateRegister").CurrentValue = DateTime.Now;
+                entry.Property("DateRegister").CurrentValue = DateTime.UtcNow;
             }
 
             if (entry.State == EntityState.Modified)

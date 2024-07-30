@@ -4,6 +4,7 @@ namespace ProductManager.Api.ViewModels;
 
 public class ProductViewModel
 {
+    [Key]
     public Guid Id { get; set; }
 
     [Required(ErrorMessage = "O campo {0} é obrigatório")]
