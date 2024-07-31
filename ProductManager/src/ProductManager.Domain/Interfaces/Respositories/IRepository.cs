@@ -8,6 +8,7 @@ public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     Task Add(TEntity entity);
     Task<TEntity> GetById(Guid id);
     Task<List<TEntity>> GetAll();
+    Task<IEnumerable<TEntity>> GetPaged(int pageNumber, int pageSize);
     Task Update(TEntity entity);
     Task Remove(Guid id);
     Task<IEnumerable<TEntity>> Get(Expression<Func<TEntity, bool>> predicate);

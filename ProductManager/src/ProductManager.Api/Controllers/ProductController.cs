@@ -40,6 +40,13 @@ public class ProductController : MainController
 
         return productViewModel;
     }
+    [HttpGet("paged")]
+    public async Task<ActionResult<IEnumerable<ProductViewModel>>> GetPaged(int pageNumber, int pageSize)
+    {
+        var pagedProducts = await _productRepository.GetPaged(pageNumber, pageSize);
+        var mappedProducts = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(pagedProducts);
+        return Ok(mappedProducts);
+    }
 
     [HttpPost]
     public async Task<ActionResult<ProductViewModel>> Add(ProductViewModel productViewModel)

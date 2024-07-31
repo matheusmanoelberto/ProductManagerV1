@@ -54,5 +54,13 @@ namespace ProductManager.Data.Repository
         {
             Db.Dispose();
         }
+
+        public async Task<IEnumerable<TEntity>> GetPaged(int pageNumber, int pageSize)
+        {
+            return await DbSet
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
     }
 }

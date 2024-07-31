@@ -19,13 +19,6 @@ public class ProductService : BaseService, IProductService
     public async Task Add(Product product)
     {
         if(!PerformValidation(new ProductValidation(), product)) return;
-        
-        //var ProductExisting = _productRepository.GetById(product.Id);
-        //if(ProductExisting != null)
-        //{
-        //    Notify("Já Existe um produto com o Id Informado");
-        //    return;
-        //}
 
        await _productRepository.Add(product);
     }

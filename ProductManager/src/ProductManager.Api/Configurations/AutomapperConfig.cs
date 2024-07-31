@@ -14,5 +14,9 @@ public class AutomapperConfig : Profile
 
         CreateMap<Product, ProductViewModel>()
             .ForMember(dest => dest.NameSupplier, opt => opt.MapFrom(src => src.Supplier.Name));
+
+        CreateMap<Cart, CartViewModel>().ReverseMap();
+        CreateMap<CartItem, CartItemViewModel>().ReverseMap();
+        CreateMap<CartHeader, CartHeaderViewModel>().ReverseMap();
     }
 }
