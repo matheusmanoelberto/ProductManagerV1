@@ -6,11 +6,24 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProductManager.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialCreatev3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "CartHeaders",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    IdCartItem = table.Column<string>(type: "varchar(200)", nullable: false),
+                    IsClosed = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CartHeaders", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Suppliers",
                 columns: table => new
@@ -27,6 +40,24 @@ namespace ProductManager.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Carts",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    CartHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
+                    IsClosed = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Carts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Carts_CartHeaders_Id",
+                        column: x => x.Id,
+                        principalTable: "CartHeaders",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "addresses",
                 columns: table => new
                 {
@@ -37,7 +68,7 @@ namespace ProductManager.Data.Migrations
                     Complement = table.Column<string>(type: "varchar(250)", nullable: true),
                     ZipCode = table.Column<string>(type: "varchar(8)", nullable: false),
                     District = table.Column<string>(type: "varchar(100)", nullable: false),
-                    Cyte = table.Column<string>(type: "varchar(100)", nullable: false),
+                    City = table.Column<string>(type: "varchar(100)", nullable: false),
                     State = table.Column<string>(type: "varchar(50)", nullable: false)
                 },
                 constraints: table =>
@@ -72,11 +103,45 @@ namespace ProductManager.Data.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "CartItems",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Quantity = table.Column<int>(type: "integer", nullable: false),
+                    CartId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CartItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CartItems_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_CartItems_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_addresses_SupplierId",
                 table: "addresses",
                 column: "SupplierId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CartItems_CartId",
+                table: "CartItems",
+                column: "CartId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CartItems_ProductId",
+                table: "CartItems",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_SupplierId",
@@ -91,7 +156,16 @@ namespace ProductManager.Data.Migrations
                 name: "addresses");
 
             migrationBuilder.DropTable(
+                name: "CartItems");
+
+            migrationBuilder.DropTable(
+                name: "Carts");
+
+            migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "CartHeaders");
 
             migrationBuilder.DropTable(
                 name: "Suppliers");

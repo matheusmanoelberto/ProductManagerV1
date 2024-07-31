@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ProductManager.Domain.Models.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProductManager.Api.ViewModels
 {

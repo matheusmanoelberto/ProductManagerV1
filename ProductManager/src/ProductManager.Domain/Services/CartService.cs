@@ -2,7 +2,6 @@
 using ProductManager.Domain.Interfaces.Respositories;
 using ProductManager.Domain.Interfaces.Services;
 using ProductManager.Domain.Models.Entities;
-using ProductManager.Domain.Models.Validations;
 namespace ProductManager.Domain.Services;
 
 public class CartService : BaseService, ICartService
@@ -13,6 +12,22 @@ public class CartService : BaseService, ICartService
         _cartRepository = cartRepository;
     }
 
+    public async Task<Cart> CreateCart()
+    {
+        var newCart = new Cart
+        {
+            CartHeader = new CartHeader
+            {
+                IdCartItem = Guid.NewGuid().ToString(), 
+                IsClosed = false
+            },
+        };
+
+        await _cartRepository.Add(newCart);
+        await _cartRepository.SaveChanges();
+
+        return newCart;
+    }
     public async Task AddProductToCart(Guid cartId, Guid productId, int quantity)
     {
         var cart = await _cartRepository.GetCartById(cartId);
@@ -21,7 +36,7 @@ public class CartService : BaseService, ICartService
             if (cart.IsClosed)
             {
                 throw new InvalidOperationException("Não é possível adicionar produtos a um carrinho fechado.");
-            }
+            }          
 
             var cartItem = new CartItem
             {
@@ -29,7 +44,7 @@ public class CartService : BaseService, ICartService
                 ProductId = productId,
                 Quantity = quantity
             };
-
+                       
             await _cartRepository.AddCartItem(cartItem);
             await _cartRepository.SaveChanges();
         }
@@ -70,5 +85,10 @@ public class CartService : BaseService, ICartService
     public async Task Remove(Guid id)
     {
         await _cartRepository.Remove(id);
+    }
+
+    public void Dispose()
+    {
+        _cartRepository?.Dispose();
     }
 }

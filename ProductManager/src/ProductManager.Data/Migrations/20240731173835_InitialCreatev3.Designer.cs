@@ -12,8 +12,8 @@ using ProductManager.Data.Context;
 namespace ProductManager.Data.Migrations
 {
     [DbContext(typeof(ManagerDbContext))]
-    [Migration("20240730014209_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240731173835_InitialCreatev3")]
+    partial class InitialCreatev3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,6 +67,64 @@ namespace ProductManager.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("addresses", (string)null);
+                });
+
+            modelBuilder.Entity("ProductManager.Domain.Models.Entities.Cart", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CartHeaderId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsClosed")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Carts", (string)null);
+                });
+
+            modelBuilder.Entity("ProductManager.Domain.Models.Entities.CartHeader", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("IdCartItem")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<bool>("IsClosed")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CartHeaders", (string)null);
+                });
+
+            modelBuilder.Entity("ProductManager.Domain.Models.Entities.CartItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CartId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("ProductManager.Domain.Models.Entities.Product", b =>
@@ -137,6 +195,31 @@ namespace ProductManager.Data.Migrations
                     b.Navigation("Supplier");
                 });
 
+            modelBuilder.Entity("ProductManager.Domain.Models.Entities.Cart", b =>
+                {
+                    b.HasOne("ProductManager.Domain.Models.Entities.CartHeader", "CartHeader")
+                        .WithOne()
+                        .HasForeignKey("ProductManager.Domain.Models.Entities.Cart", "Id")
+                        .IsRequired();
+
+                    b.Navigation("CartHeader");
+                });
+
+            modelBuilder.Entity("ProductManager.Domain.Models.Entities.CartItem", b =>
+                {
+                    b.HasOne("ProductManager.Domain.Models.Entities.Cart", null)
+                        .WithMany("CartItems")
+                        .HasForeignKey("CartId")
+                        .IsRequired();
+
+                    b.HasOne("ProductManager.Domain.Models.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("ProductManager.Domain.Models.Entities.Product", b =>
                 {
                     b.HasOne("ProductManager.Domain.Models.Entities.Supplier", "Supplier")
@@ -145,6 +228,11 @@ namespace ProductManager.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("ProductManager.Domain.Models.Entities.Cart", b =>
+                {
+                    b.Navigation("CartItems");
                 });
 
             modelBuilder.Entity("ProductManager.Domain.Models.Entities.Supplier", b =>

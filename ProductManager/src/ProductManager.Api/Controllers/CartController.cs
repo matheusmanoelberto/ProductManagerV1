@@ -48,6 +48,16 @@ namespace ProductManager.Api.Controllers
             return _mapper.Map<CartViewModel>(await _cartRepository.GetCartById(id));
         }
 
+        [HttpPost]
+        public async Task<ActionResult<CartViewModel>> CreateCart()
+        {
+            var newCart = await _cartService.CreateCart();
+
+            var cartViewModel = _mapper.Map<CartViewModel>(newCart);
+
+            return CustomResponse(HttpStatusCode.Created, cartViewModel);          
+        }
+
         [HttpPost("{cartId}/products")]
         public async Task<ActionResult> AddProductToCart(Guid cartId, CartItemViewModel cartItemViewModel)
         {
