@@ -6,22 +6,22 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProductManager.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreatev3 : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CartHeaders",
+                name: "Carts",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    IdCartItem = table.Column<string>(type: "varchar(200)", nullable: false),
+                    CartHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
                     IsClosed = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CartHeaders", x => x.Id);
+                    table.PrimaryKey("PK_Carts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -40,20 +40,21 @@ namespace ProductManager.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Carts",
+                name: "CartHeaders",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CartHeaderId = table.Column<Guid>(type: "uuid", nullable: false),
-                    IsClosed = table.Column<bool>(type: "boolean", nullable: false)
+                    IdCartItem = table.Column<string>(type: "varchar(200)", nullable: false),
+                    IsClosed = table.Column<bool>(type: "boolean", nullable: false),
+                    CartId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Carts", x => x.Id);
+                    table.PrimaryKey("PK_CartHeaders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Carts_CartHeaders_Id",
-                        column: x => x.Id,
-                        principalTable: "CartHeaders",
+                        name: "FK_CartHeaders_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
                         principalColumn: "Id");
                 });
 
@@ -134,6 +135,12 @@ namespace ProductManager.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_CartHeaders_CartId",
+                table: "CartHeaders",
+                column: "CartId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CartItems_CartId",
                 table: "CartItems",
                 column: "CartId");
@@ -156,6 +163,9 @@ namespace ProductManager.Data.Migrations
                 name: "addresses");
 
             migrationBuilder.DropTable(
+                name: "CartHeaders");
+
+            migrationBuilder.DropTable(
                 name: "CartItems");
 
             migrationBuilder.DropTable(
@@ -163,9 +173,6 @@ namespace ProductManager.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
-
-            migrationBuilder.DropTable(
-                name: "CartHeaders");
 
             migrationBuilder.DropTable(
                 name: "Suppliers");

@@ -69,6 +69,7 @@ namespace ProductManager.Data.Migrations
             modelBuilder.Entity("ProductManager.Domain.Models.Entities.Cart", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("CartHeaderId")
@@ -88,6 +89,9 @@ namespace ProductManager.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("CartId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("IdCartItem")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
@@ -96,6 +100,9 @@ namespace ProductManager.Data.Migrations
                         .HasColumnType("boolean");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CartId")
+                        .IsUnique();
 
                     b.ToTable("CartHeaders", (string)null);
                 });
@@ -192,14 +199,12 @@ namespace ProductManager.Data.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("ProductManager.Domain.Models.Entities.Cart", b =>
+            modelBuilder.Entity("ProductManager.Domain.Models.Entities.CartHeader", b =>
                 {
-                    b.HasOne("ProductManager.Domain.Models.Entities.CartHeader", "CartHeader")
-                        .WithOne()
-                        .HasForeignKey("ProductManager.Domain.Models.Entities.Cart", "Id")
+                    b.HasOne("ProductManager.Domain.Models.Entities.Cart", null)
+                        .WithOne("CartHeader")
+                        .HasForeignKey("ProductManager.Domain.Models.Entities.CartHeader", "CartId")
                         .IsRequired();
-
-                    b.Navigation("CartHeader");
                 });
 
             modelBuilder.Entity("ProductManager.Domain.Models.Entities.CartItem", b =>
@@ -229,6 +234,9 @@ namespace ProductManager.Data.Migrations
 
             modelBuilder.Entity("ProductManager.Domain.Models.Entities.Cart", b =>
                 {
+                    b.Navigation("CartHeader")
+                        .IsRequired();
+
                     b.Navigation("CartItems");
                 });
 

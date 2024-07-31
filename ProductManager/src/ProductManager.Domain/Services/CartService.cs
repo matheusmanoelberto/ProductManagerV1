@@ -14,13 +14,19 @@ public class CartService : BaseService, ICartService
 
     public async Task<Cart> CreateCart()
     {
+        var cartId = Guid.NewGuid();
         var newCart = new Cart
         {
+            Id = cartId,  
             CartHeader = new CartHeader
             {
-                IdCartItem = Guid.NewGuid().ToString(), 
-                IsClosed = false
+                Id = Guid.NewGuid(), 
+                IdCartItem = Guid.NewGuid().ToString(),
+                IsClosed = false,
+                CartId = cartId 
             },
+            CartItems = new List<CartItem>(), 
+            IsClosed = false
         };
 
         await _cartRepository.Add(newCart);

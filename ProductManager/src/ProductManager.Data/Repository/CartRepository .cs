@@ -40,6 +40,7 @@ public class CartRepository : Repository<Cart>, ICartRepository
     public async Task<Cart> GetCartById(Guid cartId)
     {
         return await Db.Carts.AsNoTracking()
+                  .Include(c => c.CartHeader) 
                   .Include(c => c.CartItems)
                   .ThenInclude(ci => ci.Product)
                   .FirstOrDefaultAsync(c => c.Id == cartId);

@@ -9,13 +9,16 @@ public class CartMapping : IEntityTypeConfiguration<Cart>
     {
         builder.HasKey(x => x.Id);
 
+
         builder.HasOne(x => x.CartHeader)
-            .WithOne()
-            .HasForeignKey<Cart>(x => x.Id);
+               .WithOne()
+               .HasForeignKey<CartHeader>(x => x.CartId)
+               .IsRequired();
 
         builder.HasMany(x => x.CartItems)
-            .WithOne()
-            .HasForeignKey(x => x.CartId);
+          .WithOne()
+          .HasForeignKey(x => x.CartId)
+          .IsRequired();
 
         builder.ToTable("Carts");
     }

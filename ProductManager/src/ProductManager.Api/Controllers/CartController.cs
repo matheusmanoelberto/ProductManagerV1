@@ -45,7 +45,9 @@ namespace ProductManager.Api.Controllers
         [HttpGet("details/{id:guid}")]
         public async Task<CartViewModel> GetCart(Guid id)
         {
-            return _mapper.Map<CartViewModel>(await _cartRepository.GetCartById(id));
+            var get = await _cartRepository.GetCartById(id);
+
+            return _mapper.Map<CartViewModel>(get);
         }
 
         [HttpPost]
@@ -73,12 +75,6 @@ namespace ProductManager.Api.Controllers
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<CartViewModel>> Update(Guid id, CartViewModel cartViewModel)
         {
-            if (id != cartViewModel.Id)
-            {
-                NotifyError("Os IDs informados não são iguais!");
-                return CustomResponse();
-            }
-
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var cart = _mapper.Map<Cart>(cartViewModel);
